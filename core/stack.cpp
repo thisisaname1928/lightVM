@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 VM::stack::stack(uint32_t stackSz) {
-  while (stackSz % 4 != 0)
+  while (stackSz % 2 != 0)
     stackSz++;
 
   stackSize = stackSz;

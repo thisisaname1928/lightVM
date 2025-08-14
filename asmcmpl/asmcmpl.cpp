@@ -71,15 +71,14 @@ int asmcmpl(std::string filePath, std::string outPath) {
     if (isComment)
       continue;
 
-    if (f.eof())
-      break;
-
     bool s = compileIns(line, buffer);
     if (!s) {
       return -1;
     }
 
     fo.write(buffer, 4);
+    if (f.eof())
+      break;
   }
 
   f.close();

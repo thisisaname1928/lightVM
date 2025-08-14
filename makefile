@@ -10,7 +10,8 @@ test: $(OUTPUT)
 	./$<
 
 testCmpl: $(OUTPUT)
-	./$< compile test.asm test.bin
+	@./$< compile test.asm test.bin
+	@./$<
 
 $(OUTPUT): $(OBJ)
 	@echo "Linking $@..."
@@ -19,3 +20,6 @@ $(OUTPUT): $(OBJ)
 %.cxx.o: %.cpp
 	@echo "CXX $<..."
 	@$(CXX) -c $< -o $@
+
+clean:
+	@rm -f $(OBJ) $(OUTPUT)
