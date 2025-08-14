@@ -6,8 +6,8 @@
 namespace VM {
 
 int push(VMCore *vm, int16_t value) {
-  // only push 32bit value to stack
-  vm->stack.push(value & 0xffffffff);
+  // only push 16 bit value to stack
+  vm->stack.push(value & 0xffff);
   return 0;
 }
 
